@@ -2,15 +2,17 @@ var mysql = require("mysql");
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: "yourusername",
-  password: "yourpassword",
-  database: "mydb",
+  user: "root",
+  password: "",
+  database: "Student",
 });
+
 con.connect(function (err) {
   if (err) throw err;
-  var sql = "DELETE FROM customers WHERE address = 'Mountain 21'";
+  console.log("Connected!");
+  var sql = "INSERT INTO Mca(Rollno,name, address) VALUES (1,'Company Inc', 'Highway 37')";
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Number of records deleted: " + result.affectedRows);
+    console.log("1 record inserted");
   });
 });

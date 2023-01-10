@@ -2,24 +2,16 @@ var mysql = require("mysql");
 
 var con = mysql.createConnection({
   host: "localhost",
-
-  user: "yourusername",
-
-  password: "yourpassword",
-
-  database: "Student",
+  user: "root",
+  password: "",
+  database: "mydb",
 });
-
 con.connect(function (err) {
   if (err) throw err;
-
   console.log("Connected!");
-
-  var sql =
-    "INSERT INTO Mca(Rollno,name, address) VALUES (1,'Company Inc', 'Highway 37')";
-
+  var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("1 record inserted");
+    console.log("Table created");
   });
 });

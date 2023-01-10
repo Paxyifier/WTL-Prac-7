@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: "sql.freedb.tech",
-    user: "freedb_practicalUser",
-    password: "M#TNxR!ExXFK6hZ"
+    host: "localhost",
+    user: "root",
+    password: ""
 });
 
 con.connect(function (err) {
