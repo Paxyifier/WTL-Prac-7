@@ -19,7 +19,7 @@ const studentData = [[1001, 'John Doe', '123 Main St', 1234567890, 'Computer Sci
 conn.connect((err) => {
   if (err) throw err;
   console.log("connected successfully!! ");
-  conn.query(insertIntoTable,studentData, function (err, result) {
+  conn.query(insertIntoTable,[studentData] , function (err, result) {
     if (err) throw err;
     console.log("Data inserted Successfully");
   });
