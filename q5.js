@@ -4,13 +4,13 @@ var conn = mysql.createConnection({
     user: 'root',
     password: 'root',
     database: 'mydb'
-});
-var createTableQuery = "CREATE TABLE student( roll_no NUMERIC(4), name VARCHAR(15), address VARCHAR(15), contact_no NUMERIC(10), dept VARCHAR(15))";
+  });
+var selectAllQuery = "SELECT * FROM student";
 conn.connect((err) => {
     if (err) throw err;
     console.log("connected successfully!! ");
-    conn.query(createTableQuery,  (err, result)=> {
+    conn.query(selectAllQuery, function (err, result) {
       if (err) throw err;
-      console.log("Table Created");
+      console.log(result);
     });
   });
